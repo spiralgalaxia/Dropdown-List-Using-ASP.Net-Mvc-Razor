@@ -1,0 +1,39 @@
+﻿@model App1_DropDownList.Models.PartsViewModel
+@using App1_DropDownList.Models;
+@{
+    ViewBag.Title = "DropDown";
+}
+
+<h2 style="text-align:center">Cleaner way of working with Drop Down List in <br> ASP.NET MVC using Razor engine</h2>
+@{ 
+    using (Html.BeginForm("DropDown", "Home"))
+    {
+        <div style="font-family:'Courier New'; margin-top:60px; margin-bottom:60px">
+            <table style="border: 2px solid darkblue; margin-bottom:20px">
+                <tr>
+                    <td>
+                        Select Your Choice:
+                    </td>
+                    <td>
+                        @Html.DropDownListFor(m => m.DropDownValue, Model.DropDownList)
+                    </td>
+                    <td>
+                        <input NAME="" TYPE="Submit" value="Go">
+                    </td>
+                </tr>
+            </table>
+
+            <table style="border: 2px solid darkblue">
+                <tr>
+                    <td style="border:1px solid darkblue">
+                        Your have choosen:
+                    </td>
+                    <td style="border:1px solid darkblue">
+                        @Html.DisplayFor(m => m.DropDownValue)
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+     }
+}
